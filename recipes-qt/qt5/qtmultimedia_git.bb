@@ -35,6 +35,6 @@ SRC_URI += "\
 
 # The same issue as in qtbase:
 # http://errors.yoctoproject.org/Errors/Build/44914/
-LDFLAGS_append_x86 = "${@bb.utils.contains('DISTRO_FEATURES', 'ld-is-gold', ' -fuse-ld=bfd ', '', d)}"
+LDFLAGS:append:x86 = "${@bb.utils.contains('DISTRO_FEATURES', 'ld-is-gold', ' -fuse-ld=bfd ', '', d)}"
 
 SRCREV = "67ab370d6a87d3b44e1cc4efb0f3fc57d5ac751e"
